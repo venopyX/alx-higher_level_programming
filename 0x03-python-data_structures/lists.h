@@ -6,6 +6,7 @@
 #include <unistd.h>
 
 /**
+ * Author: Gemechis Chala
  * struct listint_s - singly linked list
  * @n: integer
  * @next: points to the next node
