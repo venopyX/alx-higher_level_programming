@@ -1,51 +1,47 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - deletes the node at index of a
- * dlistint_t linked list
- *
- * @head: head of the list
- * @index: index of the new node
- * Return: 1 if it succeeded, -1 if it failed
+ * delete_dnodeint_at_index - deletes the node at index index
+ * @head: doubly linkedlist
+ * @index: index to remove node
+ * Return: 1 if removed, -1 if fails
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-        dlistint_t *h1;
-        dlistint_t *h2;
-        unsigned int i;
+        dlistint_t *actual = *head;
+        unsigned int cnt;
 
-        h1 = *head;
+        if (!head || !actual)
+                return (-1);
 
-        if (h1 != NULL)
-                while (h1->prev != NULL)
-                        h1 = h1->prev;
-
-        i = 0;
-
-        while (h1 != NULL)
+        if (index == 0)
         {
-                if (i == index)
+                actual = actual->next;
+                free(*head);
+                *head = actual;
+                if (*head)
+                        (*head)->prev = NULL;
+                return (1);
+        }
+        for (cnt = 0; actual; cnt++)
+        {
+                if (cnt == index)
                 {
-                        if (i == 0)
+                        if (actual->next)
                         {
-                                *head = h1->next;
-                                if (*head != NULL)
-                                        (*head)->prev = NULL;
+                                (actual->prev)->next = actual->next;
+                                (actual->next)->prev = actual->prev;
+                                free(actual);
+                                return (1);
                         }
                         else
                         {
-                                h2->next = h1->next;
-
-                                if (h1->next != NULL)
-                                        h1->next->prev = h2;
+                                (actual->prev)->next = NULL;
+                                free(actual);
+                                return (1);
                         }
-
-                        free(h1);
-                        return (1);
                 }
-                h2 = h1;
-                h1 = h1->next;
-                i++;
+                actual = actual->next;
         }
 
         return (-1);
