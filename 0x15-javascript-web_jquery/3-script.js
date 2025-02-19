@@ -1,6 +1,8 @@
-// Uses the jQuery API to add a red class to the header tag and turn it
-// red when the div#red_header tag is clicked
+// Adds the class "red" to the `<header>` element 
+// when the `DIV#red_header` is clicked, using jQuery.
 
-$('div#red_header').click(function () {
-    $('header').addClass('red');
+$(document).ready(function() {
+  $("#red_header").click(function() {
+    $("header").addClass("red");
   });
+});

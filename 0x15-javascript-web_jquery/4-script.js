@@ -1,6 +1,9 @@
-// Toggles the class of HTML tag 'HEADER' when user clicks the
-// div#toggle_header tag
+// Toggles the "red" and "green" classes on the `<header>`
+// element when the `DIV#toggle_header` is clicked, 
+// ensuring only one class is present at a time, using jQuery.
 
-$('div#toggle_header').click(function () {
-    $('header').ToggleClass('red');
+$(document).ready(function() {
+  $("#toggle_header").click(function() {
+    $("header").toggleClass("red green");
   });
+});

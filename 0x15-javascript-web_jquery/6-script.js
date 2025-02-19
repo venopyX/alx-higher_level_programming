@@ -1,6 +1,8 @@
-// Updates the text of the header tag with a new header when the
-// DIV#update_header tag is clicked
+// Updates the text of the <header> element to "New Header!!!"
+// when the DIV#update_header is clicked, using jQuery.
 
-$('div#update_header').click(function () {
-    $('header').text('New Header!!!');
+$(document).ready(function() {
+  $("#update_header").click(function() {
+    $("header").text("New Header!!!");
   });
+});
