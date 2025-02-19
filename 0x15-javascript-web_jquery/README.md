@@ -32,10 +32,6 @@ This project focuses on using JavaScript and jQuery to manipulate the Document O
 *   No `var` keyword allowed
 *   No HTML reload for DOM manipulation, updates, or data fetching
 
-## Setup
-
-1.  Clone the repository: `git clone https://github.com/YOUR_GITHUB_USERNAME/alx-higher_level_programming.git` (Replace `YOUR_GITHUB_USERNAME` with your actual GitHub username)
-2.  Navigate to the project directory: `cd alx-higher_level_programming/0x15-javascript-web_jquery`
 
 ## Tasks
 
